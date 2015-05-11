@@ -1,6 +1,6 @@
 var logging = true,
 	application_id = "PUSHBOTS_APP_ID",
-	pushbots_url = "http://api.pushbots.com/";
+	pushbots_url = "https://api.pushbots.com/";
 
 self.addEventListener('install', function(event) {
 	event.waitUntil(self.skipWaiting());

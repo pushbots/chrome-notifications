@@ -2,7 +2,7 @@
 	var serviceWorkerFile = '/service-worker.js',
 		logging = true,
 		application_id = "PUSHBOTS_APP_ID",
-		pushbots_url = "http://api.pushbots.com/";
+		pushbots_url = "https://api.pushbots.com/";
 	
 	// Once the service worker is registered set the initial state  
 	function initialise() { 
