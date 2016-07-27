@@ -1,5 +1,5 @@
 //Service worker file name
-var serviceWorkerFile = '/service-worker.js',
+var serviceWorkerFile = './service-worker.js',
 	logging = true,
 	application_id = "PUSHBOTS_APP_ID",
 	pushbots_url = "https://api.pushbots.com/";
@@ -7,13 +7,14 @@ var serviceWorkerFile = '/service-worker.js',
 // Once the service worker is registered set the initial state  
 function initialise() { 
 	
+	var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 	var push_supported = (!!('PushManager' in window) || !!navigator.push) 
 	&& !!window.Notification
 	&& !!navigator.serviceWorker
 	&& !!('showNotification' in ServiceWorkerRegistration.prototype);
 	
 	//Check if Push messaging && serviceWorker && Notifications are supported in the browser
-	if(push_supported){
+	if(push_supported && isChrome){
 		
 		var notificationStatusSetBefore = Notification.permission != "default";
 			
